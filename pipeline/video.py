@@ -17,7 +17,7 @@ def generate_scenes(scenes, style, aspect_ratio, output_dir, veo_key, job_id):
 
     for i, scene in enumerate(scenes):
         logger.info(f'[{job_id}] Generating video for scene {i+1}/{len(scenes)}: {scene.get(" title\, \Scene\)}')
- video_path = None
+ logger.info(f'[{job_id}] Generating video for scene {i+1}/{len(scenes)}: {scene.get("title", f"Scene {i+1}")}')
 
  if veo_key:
  video_path = _generate_veo3(scene, aspect_ratio, output_dir, veo_key, job_id, i)
